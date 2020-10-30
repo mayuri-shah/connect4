@@ -76,8 +76,6 @@ function findSpotForCol(x) {
 
 function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
-
-  debugger
   const piece = document.createElement('div');
   piece.classList.add('piece');
   piece.classList.add(`p${currPlayer}`);
@@ -116,7 +114,7 @@ function handleClick(evt) {
   // TODO: add line to update in-memory board
   board[y][x] = currPlayer;
   placeInTable(y, x);
-  currPlayerName();
+  let name = currPlayerName();
   
   // check for win
   if (checkForWin()) {
@@ -195,6 +193,7 @@ function currPlayerName(){
     var name = player2;
   }
   playerDisplay.textContent = name;
+  return name;
 
 }
 
